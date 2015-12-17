@@ -2,7 +2,7 @@
 
 namespace BusinessLogic
 {
-    class Wall : MapSite
+    public class Wall : MapSite
     {
         public Wall()
         {

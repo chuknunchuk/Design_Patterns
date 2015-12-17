@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace BusinessLogic
 {
-    class Maze
+    public class Maze
     {
         Dictionary<int, Room> rooms = null;
 
@@ -25,6 +27,15 @@ namespace BusinessLogic
         {
             return rooms[number];
         }
-        
+
+        public override string ToString()
+        {
+            var stringBuilder = new StringBuilder();
+            foreach (var room in rooms)
+            {
+                stringBuilder.Append(room.Key + " ");
+            }
+            return stringBuilder.ToString();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BusinessLogic
 {
-    enum Direction
+    public enum Direction
     {
         North,
         South,

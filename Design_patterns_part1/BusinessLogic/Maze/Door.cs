@@ -2,7 +2,7 @@
 
 namespace BusinessLogic
 {
-    class Door : MapSite
+    public class Door : MapSite
     {
         private Room room1 = null;
         private Room room2 = null;

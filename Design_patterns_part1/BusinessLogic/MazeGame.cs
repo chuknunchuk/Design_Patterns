@@ -6,29 +6,32 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    class MazeGame
+    public class MazeGame
     {
-        public Maze CreateMaze()
+        private IMazeFactory factory = null;
+        public Maze CreateMaze(IMazeFactory factory)
         {
-            Maze aMaze = new Maze();
-            Room r1 = new Room(1);
-            Room r2 = new Room(2);
-            Door theDoor = new Door(r1,r2);
+            this.factory = factory;
+            Maze aMaze = this.factory.MakeMaze();
+            Room r1 = this.factory.MakeRoom(1);
+            Room r2 = this.factory.MakeRoom(2);
+            Door aDoor = this.factory.MakeDoor(r1, r2);
 
             aMaze.AddRoom(r1);
             aMaze.AddRoom(r2);
 
-            r1.SetSides(Direction.North, new Wall());
-            r1.SetSides(Direction.East, theDoor);
-            r1.SetSides(Direction.South, new Wall());
-            r1.SetSides(Direction.West, new Wall());
+            r1.SetSides(Direction.North, this.factory.MakeWall());
+            r1.SetSides(Direction.East, aDoor);
+            r1.SetSides(Direction.South, this.factory.MakeWall());
+            r1.SetSides(Direction.West, this.factory.MakeWall());
 
-            r2.SetSides(Direction.North, new Wall());
-            r2.SetSides(Direction.East, new Wall());
-            r2.SetSides(Direction.South, new Wall());
-            r2.SetSides(Direction.West, theDoor);
+            r2.SetSides(Direction.North, this.factory.MakeWall());
+            r2.SetSides(Direction.East, this.factory.MakeWall());
+            r2.SetSides(Direction.South, this.factory.MakeWall());
+            r2.SetSides(Direction.West, aDoor);
 
             return aMaze;
         }
+
     }
 }

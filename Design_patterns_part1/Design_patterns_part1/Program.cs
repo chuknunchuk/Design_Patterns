@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BusinessLogic;
 
 namespace Design_patterns_part1
 {
@@ -10,6 +7,11 @@ namespace Design_patterns_part1
     {
         static void Main(string[] args)
         {
+            var factory = new BombedMazeFactory();
+            var game = new MazeGame();
+            var maze = game.CreateMaze(factory);
+            Console.WriteLine(maze.ToString());
+            Console.ReadKey();
         }
     }
 }

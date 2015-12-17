@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessLogic
 {
-    class Room : MapSite
+    public class Room : MapSite
     {
         private int roomNumber = 0;
         private Dictionary<Direction, MapSite> sides;
@@ -17,7 +17,7 @@ namespace BusinessLogic
         public Room(int rooomNu)
         {
             this.sides = new Dictionary<Direction, MapSite>(4);
-            this.roomNumber = roomNumber;
+            this.roomNumber = rooomNu;
         }
 
         public override void Enter()
