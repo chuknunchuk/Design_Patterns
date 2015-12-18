@@ -11,6 +11,13 @@ namespace Design_patterns_part1
             var game = new MazeGame();
             var maze = game.CreateMaze(factory);
             Console.WriteLine(maze.ToString());
+
+            maze = game.CreateMaze(new StandardMazeBuilder());
+            Console.WriteLine(maze.ToString());
+
+            maze = game.CreateComplexMaze(new StandardMazeBuilder());
+            Console.WriteLine(maze.ToString());
+
             Console.ReadKey();
         }
     }

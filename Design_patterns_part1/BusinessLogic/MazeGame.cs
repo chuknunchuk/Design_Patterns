@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessLogic
+﻿namespace BusinessLogic
 {
     public class MazeGame
     {
@@ -31,6 +25,28 @@ namespace BusinessLogic
             r2.SetSides(Direction.West, aDoor);
 
             return aMaze;
+        }
+
+        public Maze CreateMaze(IMazeBuilder builder)
+        {
+            builder.BuildeMaze();
+            builder.BuildRoom(1);
+            builder.BuildRoom(2);
+            builder.BuildDoor(1,2);
+
+            return builder.GetMaze();
+        }
+
+        public Maze CreateComplexMaze(IMazeBuilder builder)
+        {
+            builder.BuildeMaze();
+
+            for (int i = 0; i < 11; i++)
+            {
+                builder.BuildRoom(i+1);
+            }
+
+            return builder.GetMaze();
         }
 
     }

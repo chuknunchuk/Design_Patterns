@@ -32,7 +32,8 @@ namespace BusinessLogic
 
         public void SetSides(Direction direction, MapSite mapSite)
         {
-            this.sides.Add(direction, mapSite);
+            if (!this.sides.ContainsKey(direction))
+                this.sides.Add(direction, mapSite);
         }
         
     }

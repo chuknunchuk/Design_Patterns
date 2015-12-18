@@ -40,10 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BomnedWall.cs" />
-    <Compile Include="BombedMazeFactory.cs" />
-    <Compile Include="IMazeFactory.cs" />
-    <Compile Include="MazeFactory.cs" />
+    <Compile Include="Maze\BomnedWall.cs" />
+    <Compile Include="MazeFactory\BombedMazeFactory.cs" />
+    <Compile Include="MazeFactory\IMazeFactory.cs" />
+    <Compile Include="MazeBuilder\IMazeBuilder.cs" />
+    <Compile Include="MazeFactory\MazeFactory.cs" />
     <Compile Include="MazeGame.cs" />
     <Compile Include="Maze\Direction.cs" />
     <Compile Include="Maze\Door.cs" />
@@ -52,10 +53,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Maze\Room.cs" />
     <Compile Include="Maze\Wall.cs" />
-    <Compile Include="RoomWithBomb.cs" />
+    <Compile Include="Maze\RoomWithBomb.cs" />
+    <Compile Include="MazeBuilder\StandardMazeBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="MazeClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -25,7 +25,9 @@ namespace BusinessLogic
 
         public Room RoomNo(int number)
         {
-            return rooms[number];
+            if (rooms.Count > number)
+                return rooms[number];
+            return null;
         }
 
         public override string ToString()
