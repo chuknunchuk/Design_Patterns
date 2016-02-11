@@ -5,7 +5,7 @@ namespace Design_patterns_part1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var factory = new BombedMazeFactory();
             var game = new MazeGame();
@@ -17,7 +17,6 @@ namespace Design_patterns_part1
 
             maze = game.CreateComplexMaze(new StandardMazeBuilder());
             Console.WriteLine(maze.ToString());
-
             Console.ReadKey();
         }
     }

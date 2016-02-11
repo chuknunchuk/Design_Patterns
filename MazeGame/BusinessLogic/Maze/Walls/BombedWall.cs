@@ -1,6 +1,6 @@
 ﻿namespace BusinessLogic
 {
-    internal class BomnedWall : Wall
+    class BombedWall : Wall
     {
     }
 }

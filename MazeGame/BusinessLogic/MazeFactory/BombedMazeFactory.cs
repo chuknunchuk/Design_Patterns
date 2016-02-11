@@ -9,7 +9,7 @@
 
         public override Wall MakeWall()
         {
-            return new BomnedWall();
+            return new BombedWall();
         }
     }
 }
