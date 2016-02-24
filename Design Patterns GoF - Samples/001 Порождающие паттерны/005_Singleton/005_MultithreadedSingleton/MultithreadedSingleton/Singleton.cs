@@ -18,11 +18,11 @@ namespace MultithreadedSingleton
 
                 if (instance == null) 
                 {
-                    lock (syncRoot) // Закомментировать lock для проверки.
-                    {
+                    //lock (syncRoot) // Закомментировать lock для проверки.
+                    //{
                         if (instance == null)
                             instance = new Singleton();
-                    }
+                    //}
                 }
 
                 return instance;
